@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: oklch(0.08 0 0);
+  --color-surface: oklch(0.12 0.003 353);
+  --color-surface-raised: oklch(0.16 0.004 353);
+  --color-surface-hover: oklch(0.19 0.005 353);
+  --color-ink: oklch(0.93 0.005 353);
+  --color-muted: oklch(0.55 0.008 353);
+  --color-primary: oklch(0.50 0.16 353);
+  --color-primary-hover: oklch(0.46 0.16 353);
+  --color-accent: oklch(0.78 0.13 85);
+  --color-success: oklch(0.65 0.18 145);
+  --color-warning: oklch(0.73 0.16 80);
+  --color-danger: oklch(0.52 0.20 25);
+  --color-info: oklch(0.62 0.12 240);
+  --color-border: oklch(0.2 0.005 353);
+  --color-border-hover: oklch(0.28 0.01 353);
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.22 0.005 353) transparent;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: oklch(0.50 0.16 353 / 0.3);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@utility scrollable {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: oklch(0.22 0.005 353) transparent;
+}
