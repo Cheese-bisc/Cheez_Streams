@@ -2,7 +2,7 @@
 
 A live Formula 1 dashboard with streaming, session tracking, race weekend results, championship standings, and a multi-season race archive.
 
-Site: **[https://your-user.github.io/Cheez_Streams/](https://your-user.github.io/Cheez_Streams/)** (Update the URL with your GitHub username)
+Site: **[https://Cheese-bisc.github.io/Cheez_Streams/](https://Cheese-bisc.github.io/Cheez_Streams/)**
 
 ## Features
 
@@ -31,12 +31,6 @@ npm run build     # Production build
 npm run preview   # Preview production build locally
 npm run lint      # Run linter
 ```
-
-## GitHub Pages Deployment
-
-The site is deployed via GitHub Actions (`.github/workflows/deploy.yml`). Pushing to the `main` branch triggers a build and deploys to GitHub Pages automatically.
-
-The config uses `HashRouter` for routing — no 404.html hack needed, all routes work cleanly on static hosting.
 
 ## Adding a New Season
 
@@ -77,7 +71,3 @@ public/
     drivers/    — Driver portrait photos (.webp)
     formula1.png
 ```
-
-## License
-
-MIT
