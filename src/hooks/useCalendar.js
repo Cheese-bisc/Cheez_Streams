@@ -2,6 +2,8 @@ import { useState, useEffect, useCallback } from "react"
 import useSeasonSchedule from "./useSeasonSchedule"
 import { getAllSessions } from "../utils/sessions"
 
+const PRE_STREAM_BUFFER_MS = 20 * 60 * 1000
+
 export default function useCalendar() {
   const year = new Date().getFullYear()
   const { races } = useSeasonSchedule(year)
@@ -19,7 +21,7 @@ export default function useCalendar() {
       const start = new Date(s.dateTime)
       const end = new Date(start.getTime() + 2 * 60 * 60 * 1000)
 
-      if (now >= start && now < end) {
+      if (now >= new Date(start.getTime() - PRE_STREAM_BUFFER_MS) && now < end) {
         foundLive = true
         foundNext = s
         break

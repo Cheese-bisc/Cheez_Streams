@@ -153,7 +153,7 @@ export default function RaceDetailPage() {
       document.title = `${race.name} · Cheez Streams`;
     }
     return () => {
-      document.title = "F1 Stream Dashboard";
+      document.title = "CheezStreams";
     };
   }, [race?.name]);
 

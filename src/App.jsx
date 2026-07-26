@@ -18,8 +18,10 @@ function DashboardPage() {
   const weekend = useWeekendResults()
 
   useEffect(() => {
-    document.title = "F1 Stream Dashboard"
-  }, [])
+    document.title = nextSession?.raceName
+      ? `CheezStreams - ${nextSession.raceName}`
+      : "CheezStreams"
+  }, [nextSession?.raceName])
 
   const isLive = isSessionLive || currentSession !== null
 
